@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    color: #D5D5D5;
+    font-family: 'Zen Dots', sans-serif;
+    text-align: center;
+
+    height: 100vh;
+    margin-top: 50px;
+}
+.card{
+    display: block;
+    border-radius: 3%;
+    background-color: rgba(211, 211, 211, 0.05);
+    backdrop-filter: blur(5px) brightness(1);
+    width: 450px;
+    margin: auto;
+    border: 1px solid #D5D5D5;
+    transition: transform 0.5s;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+h1{
+    margin: 30px; 
+}
+.bio{
+    max-width: 700px; 
+    margin: 0 auto 40px auto; 
+    line-height: 1.6;
+}
+ul{
+    list-style-type: none; 
+    padding-left: 0px;
+    text-align: center; 
+    display: block;
+}
+.social{
+    display: inline;
+    margin: auto;
+    width: 12%;
+}
+
+.githubcommit{
+    border-radius: 1%;
+    border: 1px solid #D5D5D5;
+    display: inline;
+    margin: auto;
+    width: 98%;
+}
+
+.zen-dots-regular{
+    font-family: "Zen Dots", sans-serif; 
+    font-weight: 400; 
+    font-style: normal;
+}
