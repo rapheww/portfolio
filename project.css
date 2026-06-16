@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #D5D5D5;
+    font-family: 'Zen Dots', sans-serif;
+    text-align: center;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    transition: transform 0.5s;
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.project div{
+    /* border: 1px solid red; */
+    display: block;
+    margin: 10px 10px 10px 10px;
+    width: 33%;
+    padding: 5px 5px 5px 5px;
+}
+
+.pro{
+    display: flex;
+    border-radius: 3%;
+    background-color: black;
+    width: 60%;
+    margin: auto;
+    border: 1px solid #D5D5D5;
+    transition: transform 0.5s;
+    position: relative;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.pro::after, .pro::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 80%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 3%;
+    animation: 5s spin linear infinite;
+}
+.pro::before{
+    filter: blur(1.5rem);
+    opacity: 0.75;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.project div p{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 10px;
+    /* border: 1px solid blue; */
+}
+
+.zen-dots-regular{
+    font-family: "Zen Dots", sans-serif; 
+    font-weight: 400; 
+    font-style: normal;
+}

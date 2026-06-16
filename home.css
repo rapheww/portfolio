@@ -1,0 +1,137 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #000713;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: #D5D5D5;
+    font-family: 'Zen Dots', sans-serif;
+    text-align: center;
+
+    min-height: 100vh;
+
+    padding-top: 30px;
+
+    box-sizing: border-box;
+}
+
+.card{
+    display: block;
+    border-radius: 3%;
+    backdrop-filter: blur(5px) brightness(1);
+    width: 700px;
+    margin: auto;
+    border: 1px solid #084f85;
+    transition: transform 0.5s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+h1{
+    margin: 30px; 
+}
+.bio{
+    max-width: 700px; 
+    margin: 0 auto 40px auto; 
+    line-height: 1.6;
+}
+ul{
+    list-style-type: none; 
+    padding-left: 0px;
+    text-align: center; 
+    display: block;
+}
+.social{
+    display: inline;
+    margin: auto;
+    width: 10%;
+    transition: transform 0.5s;
+}
+
+.social:hover{
+    transform: scale(1.1);
+}
+
+.githubcommits{
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    width: 700px;
+    transition: transform 0.5s;
+}
+
+.githubcommits:hover{
+    transform: scale(1.05);
+}
+
+.githubcommit{
+    border-radius: 3%;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.githubcommits::after, .githubcommits::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 80%, #74c3ff);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 3%;
+    animation: 5s spin linear infinite;
+}
+.githubcommits::before{
+    filter: blur(1.5rem);
+    opacity: 0.75;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.projects{
+    display: block;
+    border-radius: 3%;
+    background-color: rgba(211, 211, 211, 0.05);
+    backdrop-filter: blur(5px) brightness(1);
+    width: 700px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #084f85;
+    transition: transform 0.5s;
+}
+
+.projects:hover{
+    transform: scale(1.05);
+}
+
+.zen-dots-regular{
+    font-family: "Zen Dots", sans-serif; 
+    font-weight: 400; 
+    font-style: normal;
+}
