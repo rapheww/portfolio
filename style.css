@@ -1,6 +1,7 @@
 html, body {
     min-height: 100%;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,17 +11,19 @@ body {
     background-attachment: fixed;
 
     color: #D5D5D5;
-    font-family: 'Zen Dots', sans-serif;
+    font-family: 'Stack Sans Headline', sans-serif;
     text-align: center;
 
     min-height: 100vh;
 
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
+}
+
+.intro{
+    margin: 10px;
+    width: 70%;
 }
 
 .intro h1{
@@ -29,40 +32,51 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 55px;
+    font-size: 60px;
+    margin-bottom: 15px;
     /* border: 1px solid red; */
 }
 
-.card {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid green; */
-    width: 35%;
+.aboutme{
+    margin-top: 80px;
+    /* border: 1px solid blue; */
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    color: #98bbfd;
 }
 
-.card div {
-    /* border: 1px solid red; */
-    width: 34%;
+.aboutme h1{
+    font-size: 40px;
+}
+
+p{
+    margin: auto;
+    margin-top: 2px;
+    width: 40%;
+}
+
+.current{
+    margin-top: 30px;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 17px;
+    color: #98bbfd;
+}
+
+.current img{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 8%;
 }
 
-.card div img {
-    /* border: 1px solid blue; */
-    width: 40%;
-    height: auto;
-    margin-bottom: auto;
+.current h1{
+    font-size: 40px;
 }
 
-.card div p{
-    /* border: 1px solid purple; */
-    font-size: 20px;
-}
-
-.zen-dots-regular{
-    font-family: "Zen Dots", sans-serif; 
-    font-weight: 400; 
-    font-style: normal;
+.stack-sans-headline-fonts {
+  font-family: "Stack Sans Headline", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20px;
+  font-style: normal;
 }

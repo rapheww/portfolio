@@ -18,120 +18,58 @@ body {
     padding-top: 30px;
 
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
-    display: block;
+    /* border: 1px solid red; */
+    width: 75%;
+    display: flex;
+}
+
+.card div{
+    border: 1px solid #5a90f5;
     border-radius: 3%;
-    backdrop-filter: blur(5px) brightness(1);
-    width: 700px;
-    margin: auto;
-    border: 1px solid #084f85;
-    transition: transform 0.5s;
+    color: #5a90f5;
+    margin: 20px;
+    width: 55%;
 }
 
-.card:hover{
-    transform: scale(1.05);
+.aboutme{
+    text-align: center;
+    padding: 15px;
 }
 
-h1{
-    margin: 30px; 
-}
-.bio{
-    max-width: 700px; 
-    margin: 0 auto 40px auto; 
-    line-height: 1.6;
-}
-ul{
-    list-style-type: none; 
-    padding-left: 0px;
-    text-align: center; 
-    display: block;
-}
-.social{
-    display: inline;
-    margin: auto;
-    width: 10%;
-    transition: transform 0.5s;
+.aboutme h1{
+    background: linear-gradient(to right, #ffffff, #0359f8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.social:hover{
-    transform: scale(1.1);
+.aboutme p{
+    text-align: justify;
 }
 
-.githubcommits{
-    display: inline-block;
-    position: relative;
-    margin: auto;
-    margin-top: 30px;
-    width: 700px;
-    transition: transform 0.5s;
+.commits{
+    text-align: center;
 }
 
-.githubcommits:hover{
-    transform: scale(1.05);
-}
-
-.githubcommit{
+.commits img{
+    width: 95%;
     border-radius: 3%;
-    display: block;
-    margin: auto;
-    width: 100%;
+    border: 1px solid #5a90f5;
 }
 
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+.contact{
+    text-align: center;
 }
 
-.githubcommits::after, .githubcommits::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 80%, #74c3ff);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 3px;
-    border-radius: 3%;
-    animation: 5s spin linear infinite;
-}
-.githubcommits::before{
-    filter: blur(1.5rem);
-    opacity: 0.75;
-}
-
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
-
-.projects{
-    display: block;
-    border-radius: 3%;
-    background-color: rgba(211, 211, 211, 0.05);
-    backdrop-filter: blur(5px) brightness(1);
-    width: 700px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border: 1px solid #084f85;
-    transition: transform 0.5s;
-}
-
-.projects:hover{
-    transform: scale(1.05);
-}
-
-.zen-dots-regular{
-    font-family: "Zen Dots", sans-serif; 
-    font-weight: 400; 
-    font-style: normal;
+.stack-sans-headline-fonts {
+  font-family: "Stack Sans Headline", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20px;
+  font-style: normal;
 }
