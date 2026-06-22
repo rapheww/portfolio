@@ -10,9 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="intro">
         <h1>Rapheww Portfolio</h1>
+        <h3 class="typing">Ongoing website</h3>
         <div class="aboutme">
             <h1>About me</h1>
             <p>Hey, my name is Raphael.</p>
@@ -25,23 +27,64 @@
         </div>
         <div class="current">
             <h1>Current languages</h1>
-            <img src="C.png" alt="c pics"/>
-            <img src="c++.png" alt="c++ pics"/>
+            <div class="lang">
+                <img src="C.png" alt="c pics"/>
+                <img src="c++.png" alt="c++ pics"/>
+            </div>
         </div>
         <div class="project">
             <h1>Projects</h1>
-            <p>eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo </p>
+            <ul>
+                <li>Minishell</li>
+                <li>Cub3d</li>
+                <li>Philosophers</li>
+            </ul>
         </div>
         <div class="learn">
             <h1>Learning</h1>
-            <p>eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-                eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-            eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-        eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-    eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo
-eojceifjeiocjesi jseijcseijkvos jgosjoekfoe jisgseiofjosj jgisjfosef oejgsoe jfsfjesogjsodockejo </p>
+
+            <div class="learning">
+
+                <div class="card">
+                    <img src="C.png" alt="C">
+                    <p>C</p>
+                </div>
+
+                <div class="card">
+                    <img src="c++.png" alt="C++">
+                    <p>C++</p>
+                </div>
+
+                <div class="card">
+                    <img src="pyt.png" alt="Python">
+                    <p>Python</p>
+                    <p>Python</p>
+                </div>
+                <div class="card">
+                    <img src="html.svg" alt="Python">
+                    <p>Html</p>
+                </div>
+                <div class="card">
+                    <img src="css.png" alt="Python">
+                    <p>Css</p>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        const elements = document.querySelectorAll('.aboutme, .project, .current, .learn, .card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
