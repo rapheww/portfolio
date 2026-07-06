@@ -1,4 +1,4 @@
-html, body {
+html, body{
     min-height: 100%;
     margin: 0;
     scroll-behavior: smooth;
@@ -26,8 +26,27 @@ body {
 
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+}
+
+header{
+    margin-top: 20px;
+    border: 1px solid red;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: right;
+}
+
+#colorbtn {
+    cursor: pointer;
+    background: none;       /* Enlève le fond gris par défaut */
+    border: none;           /* Enlève les bordures par défaut */
+    padding: 0;             /* Enlève les marges internes */
+    font-family: inherit;
+    outline: none;
 }
 
 .card,
@@ -236,4 +255,135 @@ p{
     .typing {
         font-size: 14px;
     }
+}
+
+/* --- LE NAVIGATION DOCK --- */
+.dock-menu {
+    position: fixed;
+    bottom: 20px;          
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    display: flex;
+    align-items: center;   
+    gap: 20px;
+    padding: 15px 30px;
+    
+    /* 🔵 Couleur de fond et bordure en mode Bleu */
+    background: rgba(3, 65, 180, 0.15); 
+    border: 1px solid rgba(152, 187, 253, 0.25);
+    border-radius: 40px;
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    z-index: 9999; 
+    transition: all 0.3s ease;
+}
+
+/* Style des liens/boutons dans le dock */
+.dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #98bbfd;
+    font-size: 25px;
+    padding: 8px;
+    border-radius: 50%;
+    width: 45px;           /* Légèrement agrandi pour accueillir confortablement l'image */
+    height: 45px;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* AJUSTEMENT : On réduit un peu la taille de l'image pour qu'elle respire dans le bouton */
+#laptop {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Cache le texte par défaut pour ne garder que l'icône */
+.dock-item span {
+    position: absolute;
+    bottom: 55px;
+    font-size: 12px;
+    background: rgba(0, 7, 19, 0.9);
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(152, 187, 253, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    color: #D5D5D5;        /* Assure la lisibilité du texte */
+}
+
+/* --- ANIMATIONS AU SURVOL (Effet Apple) --- */
+.dock-item:hover {
+    transform: scale(1.3) translateY(-10px); 
+    background: rgba(152, 187, 253, 0.15);
+    color: #98bbfd;
+}
+
+/* Affiche le texte de l'icône au survol */
+.dock-item:hover span {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   AJOUT : CONFIGURATION DU THÈME PURPLE (Sans toucher au reste)
+   ========================================================================== */
+
+/* Fond et Grille du Mode Purple */
+body[data-theme="purple"] {
+    background-color: #06000f;
+    background-image:
+        linear-gradient(rgba(141, 91, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(141, 91, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Titre dégradé Rapheww et Current languages en Violet */
+body[data-theme="purple"] .intro h1,
+body[data-theme="purple"] .current h1 {
+    background: linear-gradient(to right, #ffffff, #500bd3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Petite ligne verticale qui clignote pour la machine à écrire */
+body[data-theme="purple"] .typing {
+    border-right: 2px solid #a370ff;
+}
+
+/* Textes de sections et listes en Violet */
+body[data-theme="purple"] .aboutme,
+body[data-theme="purple"] .project ul {
+    color: #a370ff;
+}
+
+/* Les Cartes en Violet (Fond et bordures imbriquées ::before / ::after) */
+body[data-theme="purple"] .card {
+    border-color: rgba(141, 91, 255, 0.3);
+    background: rgba(94, 28, 248, 0.05);
+}
+body[data-theme="purple"] .card::before,
+body[data-theme="purple"] .card::after {
+    border-color: rgba(141, 91, 255, 0.3);
+}
+
+/* 🟣 Changement de couleur du conteneur du dock en mode Violet */
+body[data-theme="purple"] .dock-menu {
+    background: rgba(80, 11, 211, 0.12);
+    border-color: rgba(163, 112, 255, 0.25);
+}
+
+/* 🟣 Couleur au survol des icônes du dock en mode Violet */
+body[data-theme="purple"] .dock-item:hover {
+    background: rgba(163, 112, 255, 0.18);
+    color: #a370ff;
 }

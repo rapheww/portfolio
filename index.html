@@ -28,8 +28,8 @@
         <div class="current">
             <h1>Current languages</h1>
             <div class="lang">
-                <img src="C.png" alt="c pics"/>
-                <img src="c++.png" alt="c++ pics"/>
+                <img src="img/C.png" alt="c pics"/>
+                <img src="img/c++.png" alt="c++ pics"/>
             </div>
         </div>
         <div class="project">
@@ -46,44 +46,37 @@
             <div class="learning">
 
                 <div class="card">
-                    <img src="C.png" alt="C">
+                    <img src="img/C.png" alt="C">
                     <p>C</p>
                 </div>
 
                 <div class="card">
-                    <img src="c++.png" alt="C++">
+                    <img src="img/c++.png" alt="C++">
                     <p>C++</p>
                 </div>
 
                 <div class="card">
-                    <img src="pyt.png" alt="Python">
+                    <img src="img/pyt.png" alt="Python">
                     <p>Python</p>
                 </div>
                 <div class="card">
-                    <img src="html.svg" alt="Python">
+                    <img src="img/html.svg" alt="Python">
                     <p>Html</p>
                 </div>
                 <div class="card">
-                    <img src="css.png" alt="Python">
+                    <img src="img/css.png" alt="Python">
                     <p>Css</p>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        const elements = document.querySelectorAll('.aboutme, .project, .current, .learn, .card');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        elements.forEach(el => observer.observe(el));
-    </script>
+    <nav class="dock-menu">
+        <button class="dock-item" id="colorbtn">
+            <img id="laptop" src="https://em-content.zobj.net/source/apple/453/laptop_1f4bb.png">
+            <span id="colorText">purple</span>
+        </button>
+        <a href="#contact" class="dock-item">✉️ <span>Contact</span></a>
+    </nav>
+    <script src="index.js"></script>
 </body>
 </html>
